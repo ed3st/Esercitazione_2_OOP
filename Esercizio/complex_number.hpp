@@ -1,14 +1,12 @@
 #pragma once
 
-
-/*Definisco una classe template che modella i numeri complessi,
-z = a+ib con a=Re(z) e b=Im(z).*/
+/*Definisco una classe template che modella i numeri complessi,*/
 template<typename T> requires std::floating_point<T>
 class complex_number {
 	T re; //parte reale
 	T im; //parte immaginaria
 public:
-	//Costruttore di default: inizializza a = 0 e b = 0 (cioè z = 0).
+	//Costruttore di default: inizializza z = 0, cioè Re(z) = 0 e Im(z) = 0.
 	complex_number() 
 	: re(0), im(0)
 	{}
@@ -40,7 +38,7 @@ public:
 	}
 	
 	/*Overload operatore += .
-	Definizione dell'operatore += tra numeri complessi*/
+	Definizione dell'operatore += tra numeri complessi.*/
 	complex_number& operator+=(const complex_number& other) {
 		T a = re;
 		T b = im;
